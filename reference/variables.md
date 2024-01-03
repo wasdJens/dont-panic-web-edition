@@ -250,3 +250,9 @@ console.log(typeof userInput); // object
 
 > [!WARNING]
 > `typeof null` gibt `object` zurück. Das ist ein bekannter Bug in JavaScript. Siehe [typeof null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#null)
+
+## `const` vs. `let`
+
+Eine Variable sollte immer mit `const` deklariert werden. `const` zeigt dem Leser des Codes direkt, dass sich der Wert der Variable nicht mehr ändern wird. Besonders in einer dynamisch typisierten Sprachen lassen sich so Fehler vermeiden. `let` wird nur dann verwendet wenn man sich sicher ist, dass sich der Wert der Variable ändern wird.
+
+> Use `const` when you can, and use `let` when you have to.
