@@ -20,20 +20,20 @@ const price = 800;
 const dicount = 200;
 let canPurchase = false;
 
-if ((price - discount) <= 600) {
+if (price - discount <= 600) {
   canPurchase = true;
 } else {
   canPurchase = false;
 }
 
-console.log(canPurchase) // true
+console.log(canPurchase); // true
 ```
 
 - `else` ist ein optionaler Block und kann auch weggelassen werden.
 
 ```js
 if (condition) {
- // Code to execute if condition is true
+  // Code to execute if condition is true
 }
 
 // complete other stuff
@@ -61,7 +61,7 @@ if (conditionA) {
 
 ```js
 let price = 2000;
-switch(price) {
+switch (price) {
   case 1000:
     console.log("Price is 1000");
     break;
@@ -73,7 +73,7 @@ switch(price) {
 }
 ```
 
-## Loops 
+## Loops
 
 Schleifen erlauben es uns Ausdrücke wiederholt auszuführen. JavaScript unterstützt die gängigen Schleifen Konstruke: `for`, `do while` und `while`. Schleifen können jederzweit mit dem `break` keyword abgebrochen werden. Eine aktuelle Iteration kann man mit `continue` überspringen.
 
@@ -100,8 +100,7 @@ for (let i = 0; i <= 100; i++) {
 - Wiederholen sich bis eine Bedingung nicht mehr erfüllt ist. Das besondere an der `do while` die erste Iteration wird immer ausgeführt
 
 ```js
-do
-  statement
+do statement;
 while (condition);
 ```
 
@@ -118,9 +117,7 @@ do {
 - Wiederholt sich solange bis eine Bedingung nicht mehr erfüllt ist. Bedingung wird vor dem ersten durchlauf geprüft
 
 ```js
-while (condition) {
-
-}
+while (condition) {}
 ```
 
 ```js
@@ -140,8 +137,8 @@ const phone = {
   manufacturer: "Apple",
   model: "iPhone",
   storage: 128,
-  isReleased: false
-}
+  isReleased: false,
+};
 
 for (const key in phone) {
   console.log(key); // manufacturer, model, storage, isReleased

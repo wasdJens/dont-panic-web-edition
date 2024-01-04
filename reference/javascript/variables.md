@@ -2,7 +2,7 @@
 
 Eine Variable ist ein Container für einen Wert, wie z.B. das Ergebnis einer Rechenoperation oder ein Text, den der Benutzer eingegeben hat. Variablen sind ein benannter Speicher in JavaScript und können einen Wert speichern, auf den später zugegriffen werden kann.
 
-Variablen werden mit einen der folgenden keywords in JavaScript deklariert: 
+Variablen werden mit einen der folgenden keywords in JavaScript deklariert:
 
 ```js
 let userInput;
@@ -20,12 +20,12 @@ Eine Variable kann, muss aber nicht, einen Wert zugewiesen haben. Ein Wert kann 
 ```js
 let userInput;
 
-userInput = 'Hello World!';
+userInput = "Hello World!";
 
 const mwst = 0.19;
 ```
 
-Variablen können beliebig benannt werden. Es gibt jedoch folgende Aussnahmen: 
+Variablen können beliebig benannt werden. Es gibt jedoch folgende Aussnahmen:
 
 - Variablennamen dürfen nicht mit einer Zahl beginnen
 - Variablen sind Case Sensitive
@@ -33,21 +33,21 @@ Variablen können beliebig benannt werden. Es gibt jedoch folgende Aussnahmen:
 
 ## Unterschied zwischen `let` und `const`
 
-Variablen, die mit `let` deklariert werden, können ihren Wert ändern. Variablen, die mit `const` deklariert werden, können ihren Wert nicht ändern. 
+Variablen, die mit `let` deklariert werden, können ihren Wert ändern. Variablen, die mit `const` deklariert werden, können ihren Wert nicht ändern.
 
 ```js
-const userInput = 'Hello World!';
-userInput = 'Hello World!'; // TypeError: Assignment to constant variable.
+const userInput = "Hello World!";
+userInput = "Hello World!"; // TypeError: Assignment to constant variable.
 ```
 
 ## Datentypen in JavaScript
 
-JavaScript ist eine dynamisch typisierte Sprache. Das bedeutet, dass Variablen nicht mit einem Datentyp deklariert werden müssen. Der Datentyp wird automatisch zur Laufzeit ermittelt. 
+JavaScript ist eine dynamisch typisierte Sprache. Das bedeutet, dass Variablen nicht mit einem Datentyp deklariert werden müssen. Der Datentyp wird automatisch zur Laufzeit ermittelt.
 
 Jeder Wert in JavaScript ist immer einem Datentyp zugeordnet. Der Datentyp kann sich aber zur Laufzeit ändern. Das folgende Beispiel veranschaulicht die dynamische Typisierung von JavaScript.
 
 ```js
-let userInput = 'Foo'; // Datentyp: string
+let userInput = "Foo"; // Datentyp: string
 userInput = 42; // Datentyp: number
 ```
 
@@ -75,7 +75,7 @@ let bigInt = 1234567890123456789012345678901234567890n;
 - Strings beinhalten jede beliebige Zeichenkette, wie z.B. Text, Zahlen, Sonderzeichen, etc.
 
 ```js
-const endpoint = 'https://api.example.com';
+const endpoint = "https://api.example.com";
 const version = "v1";
 ```
 
@@ -84,7 +84,7 @@ const version = "v1";
 ```js
 const h = "Hello";
 const w = "World";
-console.log(h + ' ' + w); // Hello World
+console.log(h + " " + w); // Hello World
 ```
 
 - Strings können auch als Template Strings definiert werden.
@@ -101,7 +101,9 @@ console.log(price); // The price of the new phone is 800
 ```js
 const phone = 800;
 const discount = 25;
-const price = `The price of the new phone is ${phone - ((phone / 100) * discount)}`;
+const price = `The price of the new phone is ${
+  phone - (phone / 100) * discount
+}`;
 console.log(price); // The price of the new phone is 600
 ```
 
@@ -142,15 +144,15 @@ let password; // Variable hat keinen Wert und der User hat noch keine Eingabe ge
 const user = {
   name: "Jens",
   age: 27,
-  isAdmin: true
-}
+  isAdmin: true,
+};
 
 const phone = {
   manufacturer: "Apple",
   model: "iPhone",
   storage: 128,
-  isReleased: false
-}
+  isReleased: false,
+};
 ```
 
 - Objekte können auch leer definiert werden `const empty = {}`;
@@ -162,8 +164,8 @@ const phone = {
   manufacturer: "Apple",
   model: "iPhone",
   storage: 128,
-  isReleased: false
-}
+  isReleased: false,
+};
 
 console.log(phone.manufacturer); // Apple
 ```
@@ -176,8 +178,8 @@ const phone = {
   manufacturer: "Apple",
   model: "iPhone",
   storage: 128,
-  isReleased: false
-}
+  isReleased: false,
+};
 phone.price = 1600;
 console.log(phone); // { manufacturer: 'Apple', model: 'iPhone', storage: 128, isReleased: false, price: 1600 }
 ```
@@ -189,8 +191,8 @@ const phone = {
   manufacturer: "Apple",
   model: "iPhone",
   storage: 128,
-  isReleased: false
-}
+  isReleased: false,
+};
 delete phone.isReleased;
 console.log(phone); // { manufacturer: 'Apple', model: 'iPhone', storage: 128 }
 ```
@@ -202,8 +204,8 @@ const phone = {
   manufacturer: "Apple",
   model: "iPhone",
   storage: 128,
-  isReleased: false
-}
+  isReleased: false,
+};
 phone.isReleased = true;
 console.log(phone); // { manufacturer: 'Apple', model: 'iPhone', storage: 128, isReleased: true }
 ```
@@ -213,7 +215,7 @@ console.log(phone); // { manufacturer: 'Apple', model: 'iPhone', storage: 128, i
 ```js
 const factory = {
   "construction site": "Heidenheim an der Brenz",
-}
+};
 ```
 
 - `multi-word` properties können dann nur mit `[]` (Sqaure Bracket Notation) gelesen werden:
@@ -221,7 +223,7 @@ const factory = {
 ```js
 const factory = {
   "construction site": "Heidenheim an der Brenz",
-}
+};
 console.log(factory["construction site"]); // Heidenheim an der Brenz
 ```
 
@@ -230,8 +232,8 @@ console.log(factory["construction site"]); // Heidenheim an der Brenz
 ```js
 const fruit = "apple";
 const basket = {
-  [fruit]: 5
-}
+  [fruit]: 5,
+};
 console.log(basket); // { apple: 5 }
 ```
 
@@ -248,8 +250,7 @@ const userInput = null;
 console.log(typeof userInput); // object
 ```
 
-> [!WARNING]
-> `typeof null` gibt `object` zurück. Das ist ein bekannter Bug in JavaScript. Siehe [typeof null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#null)
+> [!WARNING] > `typeof null` gibt `object` zurück. Das ist ein bekannter Bug in JavaScript. Siehe [typeof null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#null)
 
 ## `const` vs. `let`
 
