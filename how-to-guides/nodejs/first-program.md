@@ -1,4 +1,4 @@
-# First Program
+# How to: First NodeJS Program
 
 Diese Anleitung hilft dir dabei dein erstes JavaScript Programm außerhalb des Browsers zu erstellen und mit NodeJS auszuführen.
 

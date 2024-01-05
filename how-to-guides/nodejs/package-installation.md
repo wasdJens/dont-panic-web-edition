@@ -1,4 +1,4 @@
-# Pakete mittels npm installieren
+# How To: Pakete mittels npm installieren
 
 Diese Anleitung hilft dir dabei ein externes Paket in ein Node Projekt zu installieren und zu verwenden.
 

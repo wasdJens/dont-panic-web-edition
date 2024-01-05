@@ -1,4 +1,4 @@
-# Node installieren
+# How To: Node installieren
 
 Über die Webseite kann die neuste Node Version für das jeweilige Betriebssystem installiert werden https://nodejs.org/en/download/. NodeJS installiert automatisch NPM mit.
 

@@ -1,4 +1,4 @@
-# Arbeiten mit Modulen in NodeJS
+# How To: Arbeiten mit Modulen in NodeJS
 
 Diese Anleitung veranschaulicht wie die unterschiedlichen Module Formate von JavaScript in NodeJS eingesetzt werden können. 
 
