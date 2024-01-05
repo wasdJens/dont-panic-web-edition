@@ -1,5 +1,7 @@
 # Dont Panic: Web Edition
 
+![Cover](./_attachments/cover.png)
+
 A workshop tailored to introduce the basics of web development focused on modern javascript and http.
 
 # Structure
