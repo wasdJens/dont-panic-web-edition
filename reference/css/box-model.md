@@ -171,7 +171,7 @@ span {
 
 ### `inline-block`
 
-Das Display Attribute kann den Zustand `inline-block` annehmen. Dieses bietet einen Kompromiss aus `inline` und `block`. `inline-block` kann verwendet werden wenn ein Element nicht einen Zeilenumbruch hervorrufen soll aber trotzdem Breite und Höhe annehmen soll. 
+Das Display Attribute kann den Zustand `inline-block` annehmen. Dieses bietet einen Kompromiss aus `inline` und `block`. `inline-block` kann verwendet werden wenn ein Element nicht einen Zeilenumbruch hervorrufen soll aber trotzdem Breite und Höhe annehmen soll.
 
 - Die Höhe und Breite werden respektiert
 - Padding, Margin und Border werden angewandt und andere Elemente werden weggedrückt
