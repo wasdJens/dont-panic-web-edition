@@ -11,25 +11,24 @@ button {
 
 ## Numerische Werte
 
-| Daten Typ | Beschreibung |
-| :---: | :---: |
-| `<integer>` | Ganzzahl |
-| `<number>` | Gleitkommazahl |
-| `<length>` | Längenangabe |
-| `<dimension>` | Längenangabe mit Einheit bspw. `45deg` bei Animationen |
-| `<percentage>` | Prozentangabe |
+|   Daten Typ    |                      Beschreibung                      |
+| :------------: | :----------------------------------------------------: |
+|  `<integer>`   |                        Ganzzahl                        |
+|   `<number>`   |                     Gleitkommazahl                     |
+|   `<length>`   |                      Längenangabe                      |
+| `<dimension>`  | Längenangabe mit Einheit bspw. `45deg` bei Animationen |
+| `<percentage>` |                     Prozentangabe                      |
 
 ### Relative Längenangaben
 
-| Einheit | Realtive To |
-| :---: | :---: |
-| `em` | Font Size vom Element häufig bei `fonz-size` properties |
-| `rem` | Font Size vom Root Element |
-| `vw` | 1% der Viewport Breite |
-| `vh` | 1% der Viewport Höhe |
-| `lh` | 1% der Zeilenhöhe |
-| `rlh` | 1% der Zeilenhöhe vom Root Element |
-
+| Einheit |                       Realtive To                       |
+| :-----: | :-----------------------------------------------------: |
+|  `em`   | Font Size vom Element häufig bei `fonz-size` properties |
+|  `rem`  |               Font Size vom Root Element                |
+|  `vw`   |                 1% der Viewport Breite                  |
+|  `vh`   |                  1% der Viewport Höhe                   |
+|  `lh`   |                    1% der Zeilenhöhe                    |
+|  `rlh`  |           1% der Zeilenhöhe vom Root Element            |
 
 Alle weiteren: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
 
