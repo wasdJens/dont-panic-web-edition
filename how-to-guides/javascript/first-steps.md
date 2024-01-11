@@ -7,6 +7,13 @@ Diese Anleitung erklärt wie man eine einfache Webseite mit JavaScript manipulie
 - Ein Text Editor ist installiert (bspw. [Visual Studio Code](https://code.visualstudio.com/))
 - Grundlagen HTML & JavaScript
 
+**Inhalt**
+
+- Webseite mit JavaScript verbinden
+- Webseite über JavaScript manipulieren
+- Einsatz von Flexbox und CSS Grid für Layouts
+- User Interaktionen über Event Listener
+
 ## Document Object Model
 
 Das Document Object Model (DOM) ist eine Programmierschnittstelle für HTML und XML Dokumente. Es stellt eine Baumstruktur dar, welche die einzelnen Elemente des Dokuments repräsentiert. Jedes Element ist ein Knoten im Baum und kann über JavaScript manipuliert werden.
