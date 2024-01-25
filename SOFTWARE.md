@@ -17,7 +17,7 @@
 
 ## API Testing
 
-- [Hoppscotch](https://hoppscotch.io/de)
+- [Hoppscotch](https://hoppscotch.com/download)
 
 ## Git
 
