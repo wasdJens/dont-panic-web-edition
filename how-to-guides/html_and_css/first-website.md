@@ -44,7 +44,7 @@ Diese Anleitung erklärt wie man eine erste einfache Webseite mit HTML und CSS e
 </html>
 ```
 
-- Öffne nun die Datei im Browser (Rechtsklick -> Auf Dateisystem anzeigen -> Datei in ein leeres Browser Tab ziehen)
+- Öffne nun die Datei im Browser (Im VSCode Explorer (Linke Seite) Rechtsklick auf die `index.html` -> Auf Dateisystem anzeigen -> Datei in ein leeres Browser Tab ziehen)
 
 ## CSS Datei
 
