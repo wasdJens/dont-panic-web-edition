@@ -6,7 +6,7 @@ In den ersten Versionen von JavaScript gab es nicht die Möglichkeit Code aus un
 
 Module können auf andere Module refernzieren d.h. ein Modul A hat eine Abhängigkeit (-> `dependencies`) zu einem Modul B. Mit Modulen lassen sich Bausteine definieren die an beliebiger Stelle wiederverwendet werden können. Module können ein Softwareprogramm strukturiert abbilden (Code wird in Modulen gruppiert / organisiert). Ein weiterer Vorteil von Modulen ist die Sichtbarkeit von Variablen, Funktionen etc. d.h. ob eine Variable nach außen hin Sichtbar ist kann explizit gesteuert werden. Natives JavaScript erf+llt diese Anforderung nicht, weil der Namespace global ist.
 
-Über die Zeit haben sich in JavaScript zwei Variationen von Modul Formaten etabliert: `CommonJS` (cjs) und `ESModules` (esm). CommonJS findet man hauptsächlich in JavaScript runtimes wie NodeJS. ESModules sind mittlerweile der Standard in Clientseitigen Applikationen (bspw. React, Angular und Browser Anwendungen).
+Über die Zeit haben sich in JavaScript zwei Variationen von Modul Formaten etabliert: `CommonJS` (cjs) und `ESModules` (esm). CommonJS findet man hauptsächlich in JavaScript runtimes wie NodeJS. ESModules sind mittlerweile der Standard in Clientseitigen Applikationen (bspw. React, Angular und Browser Anwendungen) [^1].
 
 ## CommonJS
 
@@ -30,7 +30,7 @@ const output = toCaps(input);
 console.log(output);
 ```
 
-Eine Besonderheit in CommonJS ist, dass importierte Funktionen einfach als Variablen gespeichert werden.
+Eine Besonderheit in CommonJS ist, dass importierte Funktionen einfach als Variablen gespeichert werden. CommonJS wird primär in Node Umgebungen eingesetzt (Ein Browser versteht eine `require` Funktion nicht) bedeutet das obigen Beispiel funktioniert nur für Anwendungen welche mittels NodeJS (Oder anderen Runtime die CJS supportet) ausgeführt werden.
 
 ## ESModules
 
@@ -58,4 +58,10 @@ console.log(output);
 
 ## CommonJS oder ESModules?
 
-Mittlerweile unterstützen alle Browser sowie alle JavaScript runtimes ESModules dehalb sollte ESModules als default verwendet werden. Das CommonJS Format ist aber weiterhin sehr verbreitet und viele Open Source Lösungen sind noch nicht ESmodules kompatibel.
+Mittlerweile unterstützen alle Browser sowie alle JavaScript runtimes ESModules dehalb sollte ESModules als default verwendet werden. Das CommonJS Format ist aber weiterhin sehr verbreitet und viele Open Source Lösungen sind noch nicht ESmodules kompatibel. Besonders wenn man nicht browser Applikationen mit JavaScript entwickelt findet man häufig noch CommonJS Module.
+
+## Further Reading
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+
+[^1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
