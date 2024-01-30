@@ -55,4 +55,4 @@ Wir haben damit jetzt den Grundstein gelegt für alle weiteren Themen und ihr ha
 
 Das Customer Number System ist eigentlich nicht das Kern System von ETUR aber es ist ein gutes Beispiel um die Grundlagen einer Client Server Architektur zu verstehen. Im nächsten Tutorial beschäftigen wir uns intensiv mit Schnittstellen Design und möchten die eigentlichen Komponenten von ETUR implementieren.
 
-> ✏️ Frage: Was sind Themen die euch jetzt noch beschäftigen? Was ist noch unklar? Schreibt diese Informationen auf und behaltet sie für die nächsten Kapitel.
+> ✏️ Frage: Was sind Themen die euch jetzt noch beschäftigen? Was ist noch unklar? Schreibt diese Informationen auf und vergleicht Sie am Ende vom Workshop
