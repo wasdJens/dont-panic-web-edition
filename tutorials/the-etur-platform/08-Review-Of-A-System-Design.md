@@ -1,0 +1,3 @@
+# 08 - Review of a System Design
+
+In diesem Tutorial geht es um den Austausch zwischen zwei komplett unterschiedlichen Systemen die man vorher noch nicht gesehen hat. Es soll ein Review für die ETUR Schnittstelle von einer anderen Gruppe stattfinden. Das Ziel ist dabei fremden Code besser zu verstehen und einen regen Austausch zu fördern wie die gleiche Anforderung auf andere Art und Weise gelöst werden kann. Dabei soll ein Austausch mit der anderen Gruppe angeregt werden und ggf. Ideen für die eigene Implementierung übernommen werden. Am Ende soll dann dieses neue Wissen in die eigene Implementierung einfließen und ggf. vergessene Anforderungen nachträglich sichtbar machen.
