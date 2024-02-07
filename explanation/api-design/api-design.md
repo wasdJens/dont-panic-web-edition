@@ -1,4 +1,4 @@
-# About: API Design
+# About: A Philosophy of API Design
 
 > Was macht eine gute Schnittstelle aus? Auf was sollte geachtet werden wenn man eine neue Schnittstelle baut?
 
