@@ -95,7 +95,7 @@ console.log(suv.getModel()); // Audi
 
 Wann sollte eine Klasse eingesetzt werden und wann klassische Funktionen in JavaScript? Kommt drauf an. Klassen bieten zum einen den Vorteil unsere Software einfacher zu organisieren. Außerdem können viele die vorher mit einer Objekt Orientierten Sprache das Programmieren gelernt haben mehr anfangen als mit den prototypenbasierten Mechanismen. Aber es gibt auch gute Gründe keine Klassen einzusetzen.
 
-Ein einfaches Beispiel [^1]:
+Ein einfaches Beispiel [^1]
 
 ```js
 function incrementDay(date) {
@@ -118,5 +118,5 @@ Eine gute Veranschaulichung wann eine Klasse eingesetzt wird ist bspw. das verme
 
 ## References
 
-[^1:] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes#why_classes
-[^2:] Aus dem Buch `A Philosophy of Software Design by John Ousterhout`
+[^1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes#why_classes
+[^2]: Aus dem Buch `A Philosophy of Software Design by John Ousterhout`
