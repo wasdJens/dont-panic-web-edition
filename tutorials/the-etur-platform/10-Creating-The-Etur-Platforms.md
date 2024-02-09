@@ -62,3 +62,8 @@ Im Developer Portal tauchen zunächst alle Reports auf die im Zustand "In Bearbe
 Die Detailseite zeigt dem Developer alle Informationen über den Report an. Er kann aber nicht die Beschreibung, Labels, Priorität, Zuweisung und Kundennummer bearbeiten. Darüber hinaus kann er einen Report auch nicht schließen. Es werden ihm aber alle Kommentare angezeigt und er selbst kann auch einen Kommentar schreiben bspw. wenn es neue Erkenntnise gibt oder eine Frage aufgetaucht ist. Den Status kann ein Developer nur auf "Ready" setzen wenn er mit seiner Arbeit fertig ist. Über einen Button kann er dann einen Report der im Zustand "In Bearbeitung" oder "Offen" ist zu einem Github Issue umwandeln.
 
 Das erstellen von einem Issue soll dabei vom ETUR Server übernommen werden (Service To Service Kommunikation) und es soll nur die Beschreibung übernommen werden aber keine sensiblen Daten wie bspw. Kundennummer oder Kommentare. Sobald für ein Report ein Issue existiert soll dieses auf dem Report als zusätzliche Information gespeichert werden. Und der Developer kann dann nur den Report auf "Ready" setzen wenn das Issue im Zustand "closed" ist.
+
+### Weitere Informationen
+
+- Github REST API Dokumentation https://docs.github.com/en/rest?apiVersion=2022-11-28
+- Github Issues REST API Dokumentation https://docs.github.com/en/rest/issues?apiVersion=2022-11-28#create-an-issue-comment
