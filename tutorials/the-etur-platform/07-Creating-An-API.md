@@ -23,31 +23,48 @@ Um die nachfolgenden Tutorials etwas einfacher zu gestalten sind folgende Eigens
 - Erstellt
 - Zuletzt bearbeitet
 - Geschlossen am
-- Report Zustand -> Offen, In Bearbeitung, Abgeschlossen
+- Report Zustand -> Offen, In Bearbeitung, Ready, Abgeschlossen
+- Priorität -> 1,2,3,4 (1 ist die höchste Priorität)
 - (Optionale) Kommentare
+  - Autor,
+  - Nachricht,
+  - Erstellt
+  - Typ -> Kunde, Developer, Produkt Manager
 - Abgeschlossene Begründung
+- (Optionale) Verweise auf externe Dienste
 
 Daraus ergibt sich folgendes Modell in JavaScript:
 
 ```js
 const report = {
+  id: '2412',
   category: "Feedback",
   customerId: "1234",
   description: "This is a description",
   labels: ["label1", "label2"],
   owner: "Product Manager",
-  assignedTo: "Developer",
+  assignedTo: "Jens Reiner",
   createdAt: "2020-01-01:12:00:00",
   editedAt: "2020-01-01:12:00:00",
   closedAt: "2020-01-01:12:00:00",
   state: "Open",
+  priority: 1
   comments: [
     {
       author: "Jens Reiner",
       message: "This is a comment",
+      createdAt: "2020-01-01:12:00:00",
+      type: 'developer',
     },
   ],
   closeReason: "This is a close reason",
+  references: [
+    {
+      type: "github",
+      url: "",
+      issueNumber: 1
+    }
+  ]
 };
 ```
 
@@ -83,12 +100,15 @@ Eure Schnittstelle sollte dabei folgende Anforderungen betrachten: (Unvollständ
 - Als Kunde kann ich alle meine Reports anhand von einer Kundennummer einsehen und den Status prüfen
 - Als Kunde sehe ich Kommentare von Developer, Produkt Managern und die Begründung warum ein Report geschlossen wurde
 - Alle Reports sollen an einen Zentralen Dienst übermittelt und archiviert werden
-  - Der Zentrale Dienst wird über ein NPM Paket bereitgestellt und soll in [09](./09-Issues-In-The-Central-System.md) eingearbeitet werden
+  - Der Zentrale Dienst wird gestellt und soll in [09](./09-Issues-In-The-Central-System.md) eingearbeitet werden
 - Als Developer kann ich meine zugewiesenen Reports in einem Developer Portal einsehen
 - Als Developer kann ich Reports als "fertig" markieren und diese begründen
 - Als Produkt Manager kann ich alle Reports einsehen und bearbeiten sowie diese an Developer zuweisen
+- Als Produkt Manager kann ich eine Prirorität für einen Report vergeben
 - Als Produkt Manager kan ich nach Reports filtern und suchen
 - Als Produkt Manager kann ich mit meinem Kunden über die Kommentar Funktion interagieren
+- Als Produkt Manager kann ich nach allen Reports zu einer Kundennummer filtern
+- Filterung nach verschiedenen Eigenschaften von einem Report bspw. nach Status, Kategorie, Labels etc.
 
 Darüber hinaus sollte eure Schnittstelle alle Basis Operationen für einen Report anbieten d.h. jedes Feld kann über entsprechende Endpunkte verändert werden. Macht euch Gedanken zu folgenden Punkten:
 
@@ -100,7 +120,7 @@ Darüber hinaus sollte eure Schnittstelle alle Basis Operationen für einen Repo
 - Was sind Dinge die euch noch interessieren und ihr oben drauf bauen möchtet?
 
 > [!TIP]
-> Schreibt euch alles zu dieser Aufgabe auf. Macht euch ggf. Skizzen vom Datenmodell, wie ein Client mit einer Schnittstelle definiert, welche Daten an welcher Stelle verschickt werden etc. Ihr könnt das alles in eurem Github Repo dann im Anschluss sammelen.
+> Schreibt euch alles zu dieser Aufgabe auf. Macht euch ggf. Skizzen vom Datenmodell, wie ein Client mit einer Schnittstelle arbeitet, welche Daten an welcher Stelle verschickt werden etc. Ihr könnt das alles in eurem Github Repo dann im Anschluss sammeln.
 
 Am Ende von dieser Aufgabe sollte folgendes Vorhanden sein:
 
