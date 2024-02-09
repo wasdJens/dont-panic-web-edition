@@ -166,6 +166,25 @@ Eine weitere Möglichkeit ist es Breakpoints zu setzen. Dafür klicken wir einfa
 
 Wenn wir eine Webseite debuggen möchten können wir auf die ähnlichen Werkzeuge zurückgreifen. In unserer JavaScript Anwendung setzen wir einfach ein `debugger` Statement in den Code und öffnen die Webseite im Chrome Browser. Dann öffnen wir die Entwickler Werkzeuge (F12) und klicken auf die `Sources` Tab. Sobald das Debugger Statement erreicht wird stoppt der Browser die Ausführung und wir bekommen ähnliche Controls wie Visual Studio Code.
 
+## Consolen Befehle
+
+Manchmal ist es schwierig mit dem Debugger zu verstehen wo mein Fehler passiert und man möchte lieber sich aktuelle Variablen über die Console ausgeben bzw. nachverfolgen wenn das Programm im normalen "Flow" arbeitet.
+
+JavaScript bietet neben dem `console.log` auch noch weitere Befehle an:
+
+- `console.count(label)` - Zählt wie oft etwas aufgerufen wurde
+- `console.trace()` - Gibt den aktuellen Call Stack aus
+
+`count` und `trace` sind zwei sehr mächtige consolen statement Werkzeuge. Mit `count` können wir bspw. prüfen ob eine Funktion (wie ein HTTP Request) mehrfach ausgeführt wird obwohl wir eigentlich nur eine Ausführung erwartet hätten. So etwas deutet häuig auf einen Seiteneffekt hin, dass an einer anderen Stelle die Funktiion auch ausgerufen wird (Ob beabsichtigt oder nicht).
+
+Wenn wir dann noch herausfinden möchten wer eigentlich alles eine Funktion aufruft können wir `console.trace` verwenden. `trace` gibt und den kompletten Funktion Call Stack zurück also sehen wir bspw. die gesamte Kette wer am Ende die Funktion aufgerufen hat und welche anderen Funktionen dabei aufgerufen wurden.
+
+Darüber hinaus kann man sich noch Objekte geordnet ausgeben über den ``console.dir()` Befehl. Alternativ können sich Daten auch noch Tabellarisch ausgeben lassen über `console.table()`.
+
+Und wenn man noch prüfen will wie lange eine Funktion wirklich braucht gibt es `console.time` und `console.timeEnd`. So kann bswp. eine Funktion am Anfang gemessen werden wie lange diese benötigt etwas zu verarbeiten.
+
+
+
 ## Fazit
 
 Debugging ist ein sehr mächtiges Werkzeug um genau zu verstehen was mein Programm an welcher Stelle macht. Es ist häufig nicht sofort ersichtlich in wie viele Funktionen das Programm eigentlich springt wenn man sich nur den Programm Code anschaut. Das besondere am `debugger` Statement ist, dass wir es auch auf jeder beliebigen Webseite ausführen können um bspw. im Chrome den Debugger zu starten.
