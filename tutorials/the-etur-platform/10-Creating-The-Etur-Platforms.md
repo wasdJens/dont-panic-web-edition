@@ -67,3 +67,9 @@ Das erstellen von einem Issue soll dabei vom ETUR Server übernommen werden (Ser
 
 - Github REST API Dokumentation https://docs.github.com/en/rest?apiVersion=2022-11-28
 - Github Issues REST API Dokumentation https://docs.github.com/en/rest/issues?apiVersion=2022-11-28#create-an-issue-comment
+
+## Fazit
+
+Die Implementierung der verschiedenen Portale ist relativ aufwendig und Bedarf einiges an Wissen. Es ist nicht schlimm wenn nicht alle Anforderungen 100% Reibungslos funktionieren. Wichtig ist, dass ihr mit solchen Textuellen Beschreibungen immer in der Software Entwicklung konfrontiert werdet und lernt diese in ihre einzelnen Bestandteile zu zerlegen.
+
+Es fällt vielleicht auch auf, dass man mit relativ wenig Text umfangreiche Software Lösungen bauen kann. Als nächstes soll die fehlende Software Komponente von einer anderen Gruppe eingekauft und integriert werden.
