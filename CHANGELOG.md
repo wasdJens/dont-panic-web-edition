@@ -7,3 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2024-02-11 
+
+Release for first Workshop at PlanB. Initial Tutorials for the ETUR Platform and all related files.
+
+### Added
+
+- Tutorial: `the-etur-platform`
+- References: `css`, `fastify`, `html`, `http`, `javascript`, `nodejs`, `rest`
+- How-To-Guides: `fastify`, `html_and_css`, `javascript`, `nodejs`
