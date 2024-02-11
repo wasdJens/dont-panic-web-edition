@@ -1,6 +1,6 @@
 # 01 - Use Case Sample
 
-In diesem Tutorial geht es um einen konkreten Use Case von ETUR und soll einen Einblick liefern, wie ETUR später benutzt wird. Es soll einen tieferen Einblick in die Anforderungen geben um eine Mögliche Architektur von ETUR sowie Schnittstellen abzuleiten.
+In diesem Tutorial geht es um einen konkreten Use Case von ETUR und soll einen Einblick liefern, wie ETUR später benutzt wird. Es soll einen tieferen Einblick in die Anforderungen geben, um eine Mögliche Architektur von ETUR sowie Schnittstellen abzuleiten.
 
 ## Use Case: Bug Report
 
