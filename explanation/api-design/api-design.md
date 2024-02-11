@@ -86,15 +86,16 @@ Im "API Design Kompass" finden wir keine starren Regeln, sondern vielmehr einen 
   - Eine Post Operation kann verwendet werden sollte aber auch Idempotent sein und die URL zur neuen Ressource sollte immer zurückgegeben werden mit dem HTTP Status Code 201
 - ✅ Folgende HTTP Return Codes sollten eingehalten werden (Aus [^5])
 
-| Method | Description | Response Status Code |
-|--------|-------------|-----------------------|
-PATCH  | Create/Modify the resource with JSON Merge Patch | `200-OK`, `201-Created`
-PUT    | Create/Replace the _whole_ resource | `200-OK`, `201-Created`
-POST   | Create new resource (ID set by service) | `201-Created` with URL of created resource
-POST   | Action | `200-OK`
-GET    | Read (i.e. list) a resource collection | `200-OK`
-GET    | Read the resource | `200-OK`
-DELETE | Remove the resource | `204-No Content`\; avoid `404-Not Found`
+| Method | Description                                      | Response Status Code                       |
+| ------ | ------------------------------------------------ | ------------------------------------------ |
+| PATCH  | Create/Modify the resource with JSON Merge Patch | `200-OK`, `201-Created`                    |
+| PUT    | Create/Replace the _whole_ resource              | `200-OK`, `201-Created`                    |
+| POST   | Create new resource (ID set by service)          | `201-Created` with URL of created resource |
+| POST   | Action                                           | `200-OK`                                   |
+| GET    | Read (i.e. list) a resource collection           | `200-OK`                                   |
+| GET    | Read the resource                                | `200-OK`                                   |
+| DELETE | Remove the resource                              | `204-No Content`\; avoid `404-Not Found`   |
+
 - ✅ Verwendet den Status Code 202 für Long Running Operations für PUT, POST oder DELETE Operationen
 - ✅ Gebt den Zustand einer Ressource zurück nach einer PUT, PATCH, POST oder GET Operation mit einem HTTP 200 oder 201 Status Code
 - ✅ Gebt einen HTTP 204 zurück ohne einen Body für eine DELETE Operation auch wenn eine URL keiner Ressource zugeordnet werden kann anstelle von einem 404 Fehler
@@ -126,18 +127,18 @@ Schnittstellen sollten REST bis Maturity Level 2 einhalten [^6]. Ressourcen auf 
 - ✅ Für das Löschen von einer Ressource sollte ein DELETE verwendet werden
 - ✅ Für Create, Read und Update Operationen können folgende Regeln nützlich sein [^6]:
 
-When using this method | if this condition happens | use&nbsp;this&nbsp;response&nbsp;code
----------------------- | ------------------------- | ----------------------
-PATCH/PUT | Any JSON field name/value not known/valid to the api-version | `400-Bad Request`
-PATCH/PUT | Any Read field passed (client can't set Read fields) | `400-Bad Request`
+| When using this method                                      | if this condition happens                                     | use&nbsp;this&nbsp;response&nbsp;code |
+| ----------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------- |
+| PATCH/PUT                                                   | Any JSON field name/value not known/valid to the api-version  | `400-Bad Request`                     |
+| PATCH/PUT                                                   | Any Read field passed (client can't set Read fields)          | `400-Bad Request`                     |
 | **If&nbsp;the&nbsp;resource&nbsp;does&nbsp;not&nbsp;exist** |
-PATCH/PUT | Any mandatory Create/Update field missing | `400-Bad Request`
-PATCH/PUT | Create resource using Create/Update fields | `201-Created`
-| **If&nbsp;the&nbsp;resource&nbsp;already&nbsp;exists** |
-PATCH | Any Create field doesn't match current value (allows retries) | `409-Conflict`
-PATCH | Update resource using Update fields | `200-OK`
-PUT | Any mandatory Create/Update field missing | `400-Bad Request`
-PUT | Overwrite resource entirely using Create/Update fields | `200-OK`
+| PATCH/PUT                                                   | Any mandatory Create/Update field missing                     | `400-Bad Request`                     |
+| PATCH/PUT                                                   | Create resource using Create/Update fields                    | `201-Created`                         |
+| **If&nbsp;the&nbsp;resource&nbsp;already&nbsp;exists**      |
+| PATCH                                                       | Any Create field doesn't match current value (allows retries) | `409-Conflict`                        |
+| PATCH                                                       | Update resource using Update fields                           | `200-OK`                              |
+| PUT                                                         | Any mandatory Create/Update field missing                     | `400-Bad Request`                     |
+| PUT                                                         | Overwrite resource entirely using Create/Update fields        | `200-OK`                              |
 
 ## Design Patterns:
 
