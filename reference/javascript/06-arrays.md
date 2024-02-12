@@ -95,6 +95,7 @@ Arrays in JavaScript bieten eine Vielzahl an Methoden für das Modifzieren von i
 - `indexOf` - Sucht und gibt den Index von einem Element zurück
 - `join` - Gibt einen String zurück mit allen Array Elementen (Optional: Seperator - Default alle strings mit `,` getrennt)
 - `includes` - Überprüft ob ein übergebener Wert existiert im Array
+- `find` - Gibt das erste Element zurück das die Callback Funktion erfüllt
 
 Arrays bieten darüber hinaus noch Methoden an die eine Callback Funktion entgegen nehmen. Eine Callback Funktion wird als Parameter übergeben die dann für jedes Element im Array aufgerufen wird (Auch bekannt als `higher-order functions`). Diese Methoden nehmen das bestehende Array, führen die Callback Funktion auf jedes Element aus und geben ein neues Array zurück mit allen Elementen.
 

@@ -4,6 +4,9 @@ Klassen in JavaScript sind spezielle Funktionen und wurden mit dem ES6 Standard 
 
 ```js
 class Car {
+  // The parameter `model` is the value for the field `model`. 
+  // When calling the `new` keyword, the constructor is called with the given value.
+  // For example: const car = new Car('Mercedes');
   constructor(model) {
     this.model = model;
   }

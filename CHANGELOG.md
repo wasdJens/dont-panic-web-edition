@@ -7,12 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2024-02-12
+
+Feedback from first day of workshop and other minor changes.
+
+### Added
+
+- [Tutorial]: `The-Etur-Platform` - Chapter 09 is now available
+- [Tutorial]: `The-Etur-Platform` - Chapter 05 added caution about duplicate `type` property in `package.json` when node project is used in a git repository.
+- [Reference]: `Arrays` - Added `find` method to good 2 know list of methods.
+- [Reference]: `Classes` - Added hint about contructor syntax and what the single parameter is for.
+- [Reference]: All - Added Number indicating in which order to read the referenc files for each folder.
+- [Reference]: `Fastify` - Added missing default informations on how to use fastify and what routes, schemas and co are
+- [How-To-Guides]: `module-format` - added caution about duplicate `type` property in `package.json` when node project is used in a git repository.
+
+### 
+
 ## [0.1.0] - 2024-02-11 
 
 Release for first Workshop at PlanB. Initial Tutorials for the ETUR Platform and all related files.
 
 ### Added
 
-- Tutorial: `the-etur-platform`
-- References: `css`, `fastify`, `html`, `http`, `javascript`, `nodejs`, `rest`
-- How-To-Guides: `fastify`, `html_and_css`, `javascript`, `nodejs`
+- [Tutorial]: `the-etur-platform`
+- [References]: `css`, `fastify`, `html`, `http`, `javascript`, `nodejs`, `rest`
+- [How-To-Guides]: `fastify`, `html_and_css`, `javascript`, `nodejs`

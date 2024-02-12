@@ -35,6 +35,10 @@ console.log(data.toString());
 "type": "module"
 ```
 
+> [!CAUTION]
+> Wenn euer Projekt bereits GIT verwendet findet ihr in der `package.json` auch einen Eintrag bzgl. `"type": "git"` unter der Property `repository`. Diese hat **nichts** mit dem `type` Feld zu tun. Stellt sicher, dass auf der oberstene Ebene von `package.json` das `type` Feld auf `module` steht.
+
+
 - Füge folgenden Code in die `index.js` Datei ein:
 
 ```js
