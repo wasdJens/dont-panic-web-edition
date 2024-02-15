@@ -26,7 +26,7 @@ Der Fastify Server kann dann über eine `listen` Methode gestartet werden. Der P
 
 ```js
 try {
-  await fastify.listen(3000);
+  await fastify.listen({port: 3000});
 } catch (err) {
   fastify.log.error(err);
   process.exit(1);

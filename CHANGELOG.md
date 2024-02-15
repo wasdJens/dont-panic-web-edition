@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2024-02-13
+
+### Fixed
+
+- [Reference]: `Fastify` - `.listen` method only with port is deprecated and got replaced with `.listen({port: 3000})`
+
 ## [0.2.0] - 2024-02-12
 
 Feedback from first day of workshop and other minor changes.
