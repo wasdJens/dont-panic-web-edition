@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2024-02-29
+
+### Changed
+
+- Reworked main `README.md` file and removed the "workshop" wording and replaced it with "handbook" to better reflect the nature of the material. Also the About section was reworked to better reflect the background of this project.
+
 ## [0.2.1] - 2024-02-13
 
 ### Fixed
