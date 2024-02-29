@@ -1,10 +1,10 @@
 # 05 - Building the Customer Number Server
 
-Dieses Tutorial ist das Gegenstück zu unserer Customer Number Website. Hier geht es darum einen ersten Webserver zu implementieren mittels JavaScript und einem JavaScript Framework (Fastify). Das Ziel ist es einen Server lokal laufen zu haben der auf HTTP Anfragen reagiert und es uns erlaubt Customer Numbers zu verwalten und zu validieren.
+Dieses Tutorial ist das Gegenstück zu unserer Customer Number Website. Hier geht es darum, einen ersten Webserver zu implementieren mittels JavaScript und einem JavaScript Framework (Fastify). Das Ziel ist es, einen Server lokal laufen zu haben, der auf HTTP-Anfragen reagiert und es uns erlaubt, Customer Numbers zu verwalten und zu validieren.
 
 ## Setup Node Project
 
-Unser Webserver soll mittels JavaScript implementieren. Damit JavaScript außerhalb vom Browser ausgeführt werden kann benötigen wir eine separate JavaScript Runtime (NodeJS). Innerhalb von diesem NodeJS Projekt verwenden wir dann ein open source Framework für das Erstellen von Webservern (Fastify).
+Unser Webserver soll mittels JavaScript implementiert werden. Damit JavaScript außerhalb des Browsers ausgeführt werden kann, benötigen wir eine separate JavaScript-Runtime (Node.js). Innerhalb dieses Node.js-Projekts verwenden wir dann ein Open-Source-Framework für das Erstellen von Webservern (Fastify).
 
 - Legt ein neues NodeJS Projekt im Ordner `services` an und nennt dieses `customer-number-server`
   - Tipp: Nutzt dafür den Befehl `npm init` und folgt den Anweisungen
@@ -36,94 +36,83 @@ Wenn alles geklappt habt solltet ihr nun in eurem Terminal ein `Hello World` seh
 
 ### Customer Model
 
-Wir möchten ein Datenmodell für einen Customer erstellen. Dieses Datenmodell soll später zwischen Client (Webseite) und Server ausgetauscht werden. Wir verwenden hierfür ein JSON Format. JavaScript ist eine nicht typisierte Programmiersprache d.h. die eigentliche Struktur können wir nicht definieren aber ein erstes Objekt welches einen Customer repräsentiert können wir definieren.
+Wir möchten ein Datenmodell für einen Customer erstellen. Dieses Datenmodell soll später zwischen Client (Webseite) und Server ausgetauscht werden. Wir verwenden hierfür ein JSON-Format. JavaScript ist eine nicht typisierte Programmiersprache, d.h. die eigentliche Struktur können wir nicht definieren, aber ein erstes Objekt, das einen Customer repräsentiert, können wir definieren.
 
-- Erstellt eine neue `customers.js` Datei. Diese Datei dient als Speicherort für alle Customer und beinhaltet entsprechende Logik.
-- Erstellt ein Beispiel JavaScript Objekt das einen Customer abbildet. Überlegt euch welche Properties dieses Objekt benötigt.
-  - Tipp: Definiert dieses als `const`
-- Erstellt ein JavaScript Array das alle Customer Objekte beinhaltet. Dieses kann am Anfang leer sein
-  - Tipp: Definiert dieses als `const`
-- Erstellt eine Funktion die alle Customer zurückgibt. Gebt in dieser Funktion das zuvor erstellte Array zurück.
-- Exportiert die Customer Function mittels `export` Statement
-- Importiert die Customer Function in der `index.js` und gebt alle Customer aus mittels `console.log`
+- Erstellt eine neue `customers.js`-Datei. Diese Datei dient als Speicherort für alle Kunden und beinhaltet entsprechende Logik.
+- Erstellt ein Beispiel-JavaScript-Objekt, das einen Kunden abbildet. Überlegt euch, welche Eigenschaften dieses Objekt benötigt.
+  - Tipp: Definiert es als `const`.
+- Erstellt ein JavaScript-Array, das alle Kundenobjekte beinhaltet. Dieses kann anfangs leer sein.
+  - Tipp: Definiert es als `const`.
+- Erstellt eine Funktion, die alle Kunden zurückgibt. Gebt in dieser Funktion das zuvor erstellte Array zurück.
+- Exportiert die Kundenfunktion mittels `export`-Anweisung.
+- Importiert die Kundenfunktion in der `index.js` und gebt alle Kunden mittels `console.log` aus.
 
-Wenn alles geklappt hat solltet ihr nun in eurem Terminal euren zuvor definierten Customer sehen. 
+Wenn alles geklappt hat, solltet ihr nun in eurem Terminal euren zuvor definierten Kunden sehen. 
 
 > [!TIP]
 > Prüft ob eure imports ein `.js` am Ende haben
 
 ### CR(U)D Customer Model
 
-Als nächstes möchten wir typische Operationen für das Customer Model anbieten nämlich: Create, Read und Delete. Hierfür erweitern wir die `customers.js` um folgende neue Funktionalitäten: 
+Als nächstes möchten wir typische Operationen für das Customer Model anbieten, nämlich: Create, Read und Delete. Hierfür erweitern wir die `customers.js` um folgende neue Funktionalitäten: 
 
 - Create Customer Function
-  - Erstellt eine Funktion die einen neuen Customer erstellt. D.h. die Funktion nimmt Parameter entgegen und erstellt ein Customer Object
-  - Tipp: Überlegt euch welche Parameter benötigt werden um einen Customer zu erstellen
-  - Tipp: Die Funktion sollte den erstellten Customer zurückgeben
+  - Erstellt eine Funktion, die einen neuen Customer erstellt. D.h. die Funktion nimmt Parameter entgegen und erstellt ein Customer Object.
+  - Tipp: Überlegt euch, welche Parameter benötigt werden, um einen Customer zu erstellen.
+  - Tipp: Die Funktion sollte den erstellten Customer zurückgeben.
 
 - Read Customer Function
-  - Erstellt eine Funktion die einen Customer anhand einer ID zurückgibt
-  - Tipp: Die Funktion sollte die ID als Parameter entgegen nehmen
-  - Tipp: Die Funktion sollte den gefundenen Customer zurückgeben
-  - Tipp: Benutzt eine der vorgestellten Built-In Array Funktionen um den Customer zu finden
+  - Erstellt eine Funktion, die einen Customer anhand einer ID zurückgibt.
+  - Tipp: Die Funktion sollte die ID als Parameter entgegennehmen.
+  - Tipp: Die Funktion sollte den gefundenen Customer zurückgeben.
+  - Tipp: Benutzt eine der vorgestellten Built-In Array Funktionen, um den Customer zu finden.
 
 - Delete Customer Function
-  - Erstellt eine Funktion die einen Customer anhand einer ID löscht
-  - Tipp: Die Funktion sollte die ID als Parameter entgegen nehmen
-  - Tipp: Die Funktion sollte den gelöschten Customer zurückgeben
-  - Tipp: Benutzt eine der vorgestellten Built-In Array Funktionen um den Customer zu finden und zu löschen
+  - Erstellt eine Funktion, die einen Customer anhand einer ID löscht.
+  - Tipp: Die Funktion sollte die ID als Parameter entgegennehmen.
+  - Tipp: Die Funktion sollte den gelöschten Customer zurückgeben.
+  - Tipp: Benutzt eine der vorgestellten Built-In Array Funktionen, um den Customer zu finden und zu löschen.
 
-Wenn ihr diese drei Funktionen definiert habt exportiert diese und verändert euer `index.js` Programm um folgende Funktionalität: 
+Wenn ihr diese drei Funktionen definiert habt, exportiert sie und verändert euer `index.js` Programm um folgende Funktionalität: 
 
-- Legt zwei neue Customers an,
-- Löscht einen zufälligen Customer
-  - Tipp: `Math.random()` in JavaScript
-- Gebt euch den verbleibenden Customer aus
+- Legt zwei neue Customers an.
+- Löscht einen zufälligen Customer.
+  - Tipp: Verwendet `Math.random()` in JavaScript.
+- Gebt euch den verbleibenden Customer aus.
 
-Als Pseudocode könnte das ganze so aussehen:
-
-```
-eingabe = LegeCustomerAn(<Parameter>)
-eingabe = LegeCustomerAn(<Parameter>)
-
-Ermittel Zufälligen Customer
-löscheCustomer(<Zufällige ID>)
-AlleCustomerAusgeben
-```
-
-Wenn alles geklappt hat sollte die Anwendung im Terminal einen Customer ausgeben.
+Als Pseudocode könnte das Ganze so aussehen:
 
 > [!TIP]
 > JavaScript Funktionen geben immer standardmäßig ein `undefined` zurück wenn diese kein `return` statement beinhalten.
 
 ### Validierung von einer Customer Number
 
-Unser Customer Number Server benötigt noch die Funkionalität gegebene Kunden Nummern zu validieren. Hierfür gibt es zwei Ansätze:
+Unser Customer Number Server benötigt noch die Funktionalität, gegebene Kundennummern zu validieren. Hierfür gibt es zwei Ansätze:
 
-- Wir können einfach prüfen ob eine gegebene ID im System existiert
-- Wir können eine eigene Logik bereit stellen was eine gültige Customer Number ist
-  - Bspw. gibt es viele Hersteller die bestimmte Patterns für ihre Kunden Nummern verwenden
+- Wir können einfach prüfen, ob eine gegebene ID im System existiert.
+- Wir können eine eigene Logik bereitstellen, was eine gültige Kundennummer ist.
+  - Bspw. gibt es viele Hersteller, die bestimmte Patterns für ihre Kundennummern verwenden.
 
-Wir möchten eine Kombination aus beiden wählen d.h. erst prüfen wir ob eine Kunden Nummer im System existiert und dann ob Sie ein bestimmtes Pattern beinhaltet. Hierfür erweitern wir die `customers.js` um folgende Funktionalität:
+Wir möchten eine Kombination aus beiden wählen, d.h. erst prüfen wir, ob eine Kundennummer im System existiert und dann, ob sie ein bestimmtes Pattern beinhaltet. Hierfür erweitern wir die `customers.js` um folgende Funktionalität:
 
-- Erstellt eine neue Funktion die eine Kunden Nummer entgegen nimmt und diese validiert.
-- Innerhalb von dieser Funktion soll geprüft werden ob die übergebene Kunden Nummer bereits existiert
-  - Tipp: Verwendet eine Array Methode und prüft das Array mit allen bekannten Kunden Nummern
+- Erstellt eine neue Funktion, die eine Kundennummer entgegennimmt und diese validiert.
+- Innerhalb dieser Funktion soll geprüft werden, ob die übergebene Kundennummer bereits existiert.
+  - Tipp: Verwendet eine Array-Methode und prüft das Array mit allen bekannten Kundennummern.
 
-Kunden Nummern in ETUR sollen immer einen gewählten Prefix haben: `ETUR-CN-` um diese später eindeutig im System als Kunden Nummern zu erkennen. Dieser Prefix soll jetzt geprüft werden für alle Kunden Nummern welche die Funktion entgegen nimmt. Ein Beispiel: 
+Kundennummern in ETUR sollen immer einen gewählten Präfix haben: `ETUR-CN-`, um diese später eindeutig im System als Kundennummern zu erkennen. Dieser Präfix soll jetzt für alle Kundennummern, die die Funktion entgegennimmt, geprüft werden. Ein Beispiel:
 
-Als weiterer Dienst in ETUR bekomme ich Kunden Nummern und möchte diese Validieren. Ich schicke also alle Kunden Nummern an den Customer Number Server bspw: `ETUR-CN-34623` ist eine Valide Kunden Nummer, `ET-CN-2334a` ist keine Valide Kunden Nummer.
+Als weiterer Dienst in ETUR bekomme ich Kundennummern und möchte diese validieren. Ich schicke also alle Kundennummern an den Customer Number Server, z.B. `ETUR-CN-34623` ist eine valide Kundennummer, `ET-CN-2334a` ist keine valide Kundennummer.
 
-Wir erweitern deshalb unsere Funktion um einen Regex der prüft ob die Kunden Nummer mit dem Prefix beginnt und nur Zahlen beinhaltet. Hierfür verwenden wir folgenden Regex: `/ETUR-CN-\w+/`.
+Wir erweitern deshalb unsere Funktion um einen Regex, der prüft, ob die Kundennummer mit dem Präfix beginnt und nur Zahlen beinhaltet. Hierfür verwenden wir folgenden Regex: `/ETUR-CN-\w+/`.
 
 ```js
 const pattern = /ETUR-CN-\w+/;
 const isValid = pattern.test(customerNumber)
 ```
 
-Fügt diese Funktionalität in eure bestehende validate function ein. Der check ob der übergebene Parameter eine valide Kunden Nummer ist sollte passieren bevor wir im System danach suchen. Wenn eine Kunden Nummer valide ist suchen wir ob sie uns bekannt ist und geben dann entweder `true` oder `false` zurück.
+Fügt diese Funktionalität in eure bestehende `validate` Funktion ein. Der Check, ob der übergebene Parameter eine valide Kundennummer ist, sollte vor der Suche im System erfolgen. Wenn eine Kundennummer valide ist, suchen wir, ob sie uns bekannt ist, und geben dann entweder `true` oder `false` zurück.
 
-Um die Funktionalität zu testen erweitert eure `index.js` um ein paar Beispiel Kunden nummern und ruft die validate funktion auf und lasst euch das Ergebnis ausgeben.
+Um die Funktionalität zu testen, erweitert eure `index.js` um ein paar Beispiel-Kundennummern und ruft die `validate` Funktion auf, um das Ergebnis auszugeben.
 
 ## Customer Number Service - Halbzeit
 
@@ -136,6 +125,20 @@ Was sollte ab diesem Punkt erreicht sein? Wir haben ein erstes JavaScript Modul 
 - Ausgeben von einem Customer Objekt anhand einer ID
 
 Allerdings läuft diese Anwendung aktuell nur einmalig (Die `index.js` wird einmal ausgeführt und ab dann ist das Programm beendet) und wir können noch nicht von außen mit dem Server interagieren. Deshalb möchten wir als nächstes unseren Service mit einem Webserver erweitern.
+
+## Integration von Fastify
+
+In diesem Schritt soll unsere `index.js` Datei erweitert werden und einen Webserver mittels Fastify implementieren und die ersten Routen für unseren Customer Number Service bereitstellen.
+
+- Installiert euch das Fastify Package 
+  - Tipp: `npm install fastify`
+
+- Setzt einen ersten Fastify Server auf. Ihr könnt eine leere Route für den Anfang verwenden, wichtig ist, dass der Server gestartet werden kann.
+  - Tipp: Verwendet `node index.js`, um euren Server zu starten.
+
+### Das erste Plugin
+
+In JavaScript ist alles ein Objekt. In Fastify wird alles als Plugin abgebildet (Ein Plugin ist dabei nichts anderes als eine JavaScript Datei). Wir möchten jetzt ein Plugin für unsere Customer Endpunkte erstellen und dieses in unserem Server registrieren. Dazu erweitern wir zuerst unser `customers.js` um eine Routing Funktion:
 
 ## Integration von Fastify
 

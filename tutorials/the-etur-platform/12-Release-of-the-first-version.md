@@ -4,12 +4,12 @@ In diesem Tutorial soll das ETUR System abgeschlossen werden. Es ist quasi euer 
 
 ## Offene Aufgaben abschließen
 
-Falls ihr noch Zeit habt könnt ihr jetzt alle offenen Aufgaben oder Probleme von eurer Lösung abschließen. In anderen Worten ihr habt Zeit für einen groben Feinschliff.
+Falls ihr noch Zeit habt, könnt ihr jetzt alle offenen Aufgaben oder Probleme eurer Lösung abschließen. Mit anderen Worten, ihr habt Zeit für einen groben Feinschliff.
 
-- Gibt es noch eine Seite die ihr ggf. überarbeiten möchtet?
-- Arbeitet ein Endpunkt noch nicht wie gewollt?
-- Ist die Dokumentation auf dem neusten Stand?
-- Habt ihr mal probiert ETUR wirklich zu nutzen wie ein Kunde, Produkt Manager oder Developer?
+- Gibt es noch eine Seite, die ihr möglicherweise überarbeiten möchtet?
+- Funktioniert ein Endpunkt noch nicht wie gewünscht?
+- Ist die Dokumentation auf dem neuesten Stand?
+- Habt ihr ETUR schon einmal ausprobiert, wie es ein Kunde, Produktmanager oder Entwickler tun würde?
 
 ## Weitere Ideen & Fazit
 
