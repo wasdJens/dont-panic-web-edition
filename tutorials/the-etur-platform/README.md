@@ -10,14 +10,14 @@ In diesem Tutorial wird eine neue Software Lösung erarbeitet. ETUR (Easy to use
 
 ETUR soll dabei als Web Lösung für Cloud Dienste realisiert werden und Abhängigkeiten zu anderen Systemen aufweisen. Das Tutorial ist dabei in unterschiedliche Bereiche aufgeteilt, um am Ende eine fertige Software Lösung zu haben. 
 
-Die Reihenfolge ist immer mit Zahlen am Dateinamen gekennzeichnet z.B. `00-Introduction` ist das erste Kapitel. Aufgaben sind mit `✏️ Frage:` emoji im Titel gekennzeichnet und immer in einem Zitier Block:
-
-> ✏️ Frage: Was lernen wir in diesem Tutorial?
-
 ## Voraussetzungen
 
-## Zusammenarbeit
+- Grundlagen von HTML und CSS, ([Reference](../../reference/html/01-introduction.md))
+- Grundlagen von JavaScript ([Reference](../../reference/javascript/01-variables.md))
+- Grundlagen von HTTP ([Reference](../../reference/http/01-introduction.md))
 
-Wenn ihr gemeinsam an diesem Tutorial arbeiten möchtet empfiehlt es sich in Visual Studio Code [Live Share](https://code.visualstudio.com/learn/collaboration/live-share) zu installieren. Mit Live Share könnt ihr alle gleichzeitig im selben Projekt arbeiten ohne ggf. merges oder ähnliches nebenher machen zu müssen.
+## Hints
 
-Ihr könnt sogar den später entwickelten Server sowie die Webseite über Live Share auf eurem Rechner ausführen.
+- Das Tutorial ist für zwei Personen konzipiert
+- Das Tutorial beinhaltet eine Aufgabestellung wo Lösungen von anderen Gruppen "eingekauft" werden soll. Falls du das Tutorial alleine machst kannst du entweder alle drei Aufgaben lösen oder nur einen Teil.
+- Prinzipiell können alle Aufgaben unabhängig voneinander gelöst werden. Es empfiehlt sich aber die Reihenfolge einzuhalten.
