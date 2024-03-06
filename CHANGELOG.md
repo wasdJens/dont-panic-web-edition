@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.3.1] - 2024-02-29
+### Added 
+- [Tutorial]: `The Undefined Adventure` - Started working on a new Tutorial to introduce the basics of JavaScript with NodeJS
+
+### Changed
+
+- [Tutorial]: `The-Etur-Platform` Updated main README with some hints and what reference material might be useful before trying the tutorial
+- [Tutorial]: Updated main README and moved the tips about working together and how to work with the tutorials to the README file.
+
+
+## [0.3.1] - 2024-02-29
 
 ### Fixed
 
