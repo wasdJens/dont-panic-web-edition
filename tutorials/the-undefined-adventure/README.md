@@ -10,5 +10,6 @@ In diesem Tutorial werden die Grundlagen von JavaScript am Beispiel von NodeJS g
 
 ## Ziel
 
-## Zusammenarbeit
+## Hints
 
+- Das Tutorial ist für die Bearbeitung von einer Person konzipiert.
