@@ -17,7 +17,7 @@ console.log(welcomeText);
 node index.mjs
 ```
 
-- Tipp in Visual Studio Code -> Rechtsklick auf die `index.js` -> Open in Integrated Terminal und ihr seid direkt im richtigen Verzeichnis.
+- Tipp in Visual Studio Code -> Rechtsklick auf die `index.mjs` -> Open in Integrated Terminal und ihr seid direkt im richtigen Verzeichnis.
 - Wichtig: Achtet, dass die Dateiendung `.mjs` ist, da wir in diesem Tutorial mit ES6 Modulen arbeiten (Später mehr dazu).
 
 Als Ergebnis solltet ihr jetzt `Hello World` in der Ausgabe sehen.
