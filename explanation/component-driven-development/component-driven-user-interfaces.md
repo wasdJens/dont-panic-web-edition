@@ -63,6 +63,8 @@ Wenn man dann eine neue Seite oder Feature hinzufügen möchte ist es deutlich a
 
 Anstatt eine Oberfläche als gesamtes zu entwickeln kann man zuerst die einzelnen Bereiche einer Oberfläche identifizieren und die Elemente die immer wieder vorkommen. Die Elemente die immer wieder vorkommen definieren wir dann als Eigenständige Komponenten. Um einen Bereich der Oberfläche zu entwickeln verwenden wir dann diese Komponenten um eine größere neue zu bauen. Um eine gesamte Seite zu bauen verwenden wir dann diese Komponenten und "stecken" diese zusammen.
 
+Man beginnt mit der kleinsten Component und baut sich eine Seite zusammen.
+
 ### Am Beispiel der Teams Seitenleiste
 
 Um das Konzept einmal näher zu bringen möchten wir die Teams Seitenleiste nachbauen. Die Seitenleiste besteht aus einer Liste welche die einzelnen Bereiche anzeigt. Ein Bereich ist dabei mit einem Icon und einem Text dargestellt. Wenn ich den Bereich aktiv habe wird dieser farblich hervorgehoben. Ab einer gewissen Länge gibt es noch ein weiteres Menü das zusätzliche Optionen beinhaltet.
@@ -134,6 +136,55 @@ Wenn wir jetzt eine andere Seitenleiste an eine andere Position einfügen möcht
 Komponenten sind standartisierte, wiederverwendbare Bausteine die ein Element von einer Oberfläche abbilden. Die Komponente beinhaltet dabei die Darstellung und Logik des Elements.
 
 Komponenten können in anderen Komponenten zusammengefasst werden um vollständige Oberflächen zu erstellen.
+
+## Components identifizieren
+
+Woher weiß man was eine "gute" Component ist? Ein häufiges Problem ist das identifizieren von den richtigen Components und das Design von der Component selbst:
+
+- Wie viel Komplexität sollte die Component beinhalten?
+- Welche "API" nach außen benötigt meine Component damit andere diese wiederverwenden können?
+- Gibt es Components die nur anzeigen und welche die Daten verarbeiten?
+- Welchen State benötigt meine Component intern? 
+- Hat meine Component Abhängigkeiten zu anderen und wie sehen diese aus?
+
+Die Komplexität einer Component kann man in Grenzen halten wenn man das Single Responsibility Principle anwendet. Speziell für die kleinsten Components aus dem Bottom Up Prinzip, welche genau eine Aufgabe übernehmen. 
+
+Die API nach außen ergibt sich daraus, wo überall eine Component eingesetzt wird. Bei einer Button Component ist die Wiederverwendbarkeit relativ hoch deshalb sollte die Component nach außen typische Button Funktionen (Disabled, Handle Click etc.) anbieten. Anders verhält es sich mit Components die zusammen gesetzt werden aus vielen anderen um bspw. genau ein Use Case abzubilden. Hier bietet es sich ggf. an gar keine API nach außen anzubieten wenn eine Component genau einen speziellen Use Case abdeckt.
+
+Die Unterscheidung ob eine Component bspw. einen Button darstellt oder als Wrapper dient und Daten aufbereitet ergibt sich relativ schnell wenn man größere Use Cases aus vielen kleinen Komponenten zusammen baut. In unserem Teams Seitenleisten Beispiel hatten wir bereits eine solche Komponente die sich darum kümmert welche Elemente angezeigt werden (Bspw. basierend auf einer API Response). Aus diesem Grund macht es Sinn Components in zwei Kategorien zu unterteilen:
+
+- Smart Component
+- Dumb Component
+
+Die Smart Component ist zuständig für die Logik und Datenverarbeitung. Hat also selbst keine UI Implementierung sondern nutzt andere Dumb Components um die Daten entsprechend anzuzeigen. Eine Dumb Component weiß selbst nicht woher die Daten kommen sondern erlauben einfach über ihren Input / Props das Anzeigen der Daten. Der eigentliche Wert wird von der Smart Component ermittelt.
+
+### Entscheidungshilfen für Component Design
+
+**Ist die Component eine Art Base Component?**
+
+Base Components sind alle die spezielle HTML Elemente darstellen z.B. ein Button, eine Liste, ein Icon, Eingabefelder etc.
+
+- Diese Art von Components sollten keine Business Logik enthalten die nicht mit dem internen Element zusammenhängen
+- Base Components sollten maximal Abhängigkeiten zu anderen Base Components haben bspw. kann eine Liste ein Listenelement enthalten
+- Die API nach außen sollte so gestaltet werden, dass der User die meisten HTML Attribute steuern kann und alle Daten die zum anzeigen benötigt werden übergeben werden können
+
+| Complexity | API | State | Dependencies | Smart / Dumb |
+|:-------:|:---:|:----:|:------------:|:------------:|
+| Simple | Rich for outsiders | Minimal only HTML Attributes and Data | Other Base Compoennts | Dumb
+
+**Spricht die Component mit einer API und bereitet Daten auf?**
+
+Hier spricht man auch von Wrapper Component die selbst keine Darstellung implementiern sondern andere Components dafür nutzen aber die Daten bspw. von einer API holen z.B. möchte ich eine Liste von Maschinen anzeigen dafür spreche ich mit einer API und bereite die Daten so auf das die List Component die Daten anzeigen kann.
+
+- Diese Art von Components sollten primär die Business Logik für einen genauen Use Case Implementieren 
+- Nach unten hat die Component Abhängigkeiten zu anderen Components die für die Anzeige benutzt werden.
+- Die API ist meistens sehr minial, da diese Art der Components bereits einen speziellen Use Case abdecken
+  - Ich kann diese Component nutzen um immer eine Liste von Maschinen anzuzeigen
+  - Was man bspw. von außen steuern könnte wäre ob ich Filter mitgeben könnte
+
+| Complexity | API | State | Dependencies | Smart / Dumb |
+|:-------:|:---:|:----:|:------------:|:------------:|
+| Medium | Lean since it implements a specific use case | Needs to keep track of API states and responses. Possible enriches the data with other sources | Other Base Compoennts | Smart
 
 ## Component Driven Principles
 
