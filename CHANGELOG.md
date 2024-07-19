@@ -8,12 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added 
-- [Tutorial]: `The Undefined Adventure` - Started working on a new Tutorial to introduce the basics of JavaScript with NodeJS
+- (Reference): `Angular` begin working on the introduction to the angular framework
+- (Explanation): `Component Driven Development` - Started working on a new Explanation to introduce the basics of Component Driven Development
+- (Tutorial): `The Undefined Adventure` - Started working on a new Tutorial to introduce the basics of JavaScript with NodeJS
 
 ### Changed
 
-- [Tutorial]: `The-Etur-Platform` Updated main README with some hints and what reference material might be useful before trying the tutorial
-- [Tutorial]: Updated main README and moved the tips about working together and how to work with the tutorials to the README file.
+- (Tutorial): `The-Etur-Platform` Updated main README with some hints and what reference material might be useful before trying the tutorial
+- (Tutorial): Updated main README and moved the tips about working together and how to work with the tutorials to the README file.
 
 
 ## [0.3.1] - 2024-02-29
@@ -32,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [Reference]: `Fastify` - `.listen` method only with port is deprecated and got replaced with `.listen({port: 3000})`
+- (Reference): `Fastify` - `.listen` method only with port is deprecated and got replaced with `.listen({port: 3000})`
 
 ## [0.2.0] - 2024-02-12
 
@@ -40,13 +42,13 @@ Feedback from first day of workshop and other minor changes.
 
 ### Added
 
-- [Tutorial]: `The-Etur-Platform` - Chapter 09 is now available
-- [Tutorial]: `The-Etur-Platform` - Chapter 05 added caution about duplicate `type` property in `package.json` when node project is used in a git repository.
-- [Reference]: `Arrays` - Added `find` method to good 2 know list of methods.
-- [Reference]: `Classes` - Added hint about contructor syntax and what the single parameter is for.
-- [Reference]: All - Added Number indicating in which order to read the referenc files for each folder.
-- [Reference]: `Fastify` - Added missing default informations on how to use fastify and what routes, schemas and co are
-- [How-To-Guides]: `module-format` - added caution about duplicate `type` property in `package.json` when node project is used in a git repository.
+- (Tutorial): `The-Etur-Platform` - Chapter 09 is now available
+- (Tutorial): `The-Etur-Platform` - Chapter 05 added caution about duplicate `type` property in `package.json` when node project is used in a git repository.
+- (Reference): `Arrays` - Added `find` method to good 2 know list of methods.
+- (Reference): `Classes` - Added hint about contructor syntax and what the single parameter is for.
+- (Reference): All - Added Number indicating in which order to read the referenc files for each folder.
+- (Reference): `Fastify` - Added missing default informations on how to use fastify and what routes, schemas and co are
+- (How-To-Guides): `module-format` - added caution about duplicate `type` property in `package.json` when node project is used in a git repository.
 
 ### 
 
@@ -56,6 +58,6 @@ Release for first Workshop at PlanB. Initial Tutorials for the ETUR Platform and
 
 ### Added
 
-- [Tutorial]: `the-etur-platform`
-- [References]: `css`, `fastify`, `html`, `http`, `javascript`, `nodejs`, `rest`
-- [How-To-Guides]: `fastify`, `html_and_css`, `javascript`, `nodejs`
+- (Tutorial): `the-etur-platform`
+- (References): `css`, `fastify`, `html`, `http`, `javascript`, `nodejs`, `rest`
+- (How-To-Guides): `fastify`, `html_and_css`, `javascript`, `nodejs`
