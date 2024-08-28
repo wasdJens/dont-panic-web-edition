@@ -8,7 +8,7 @@ Die zwei wichtigsten Ansätze die Angular uns direkt liefert sind dabei die Kaps
 
 Bevor man tiefer mit Angular startet sollte man sich mit dem Konzept von [Component Driven User Interfaces](../../explanation/component-driven-development/component-driven-user-interfaces.md) vertraut machen.
 
-Außerdem sind die Grundlagen von JavaScript sehr wichtig hier empfiehlt es sich einmal die Tutorials [The Etur Platform](../../tutorials/the-etur-platform/README.md) und [The Undefined Adventure](../../tutorials/the-undefined-adventure/README.md) durchzugehen.  
+Außerdem sind die Grundlagen von JavaScript essentiell hier empfiehlt es sich einmal die Tutorials [The Etur Platform](../../tutorials/the-etur-platform/README.md) und [The Undefined Adventure](../../tutorials/the-undefined-adventure/README.md) durchzugehen.  
 
 ## Inhalte & Reihenfolge
 
@@ -36,4 +36,4 @@ Hier befindet sich alles bzgl. Funktionen die Angular als Platform automatisch a
 
 6. Advanced Topics related to Angular
 
-Hier befinden sich zum einen spezielle Angular Themen aber auch Advanced Topics wie bspw. Observables etc.
+Hier befinden sich zum einen spezielle Angular Themen aber auch Advanced Topics wie bspw. Observables, wie man Angular Anwendungen am besten updaten kann etc.
