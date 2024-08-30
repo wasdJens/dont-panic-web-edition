@@ -11,6 +11,7 @@ Diese Anleitung erklärt wie man ein neues Angular Projekt aufsetzen kann. Angul
 
 - Aufsetzen von einem neuen Angular Projekt
 - Die Angular CLI kennen lernen
+- Eine erste eigene Component schreiben
 
 Diese Anleitung basiert auf Angular Version 18
 
@@ -95,3 +96,70 @@ Im normalen Alltag hat man wenig mit der `index.html`, `main.ts` und `styles.css
 
 ### `app` Ordner
 
+Components, Services, Directives und unsere eigentliche Business Logik befindet sich im `app` Ordner. Es bietet sich an, im App Ordner eine Struktur für unsere Anwendung zu definieren. Als Beispiel kann man alle Angular Dateien (Components, Service etc.) die ein Feature (Use Case) repräsentieren in einem Ordner zusammen fassen (Feature getriebene Struktur).
+
+- `app.config.ts` - Definiert die Konfiguration von einer Angular Anwendung (Früher app.module.ts) u.a. können hier Provider (bspw. Router) definiert werden.
+- `app.component.ts` - Die Root Component von unserer Angular Anwendung. Diese Component wird von Angular zur Laufzeit in `<app-root>` in der `index.html` gerendert. Typischerweise befindet sich hier das Grundlegende Layout unserer Anwendung (Als Components) und u.a. das Router Outlet. Hier macht es auch Sinn Lifecycle Methoden zu definieren die bspw. global beim Start der Anwendung ausgeführt werden sollen (Laden von Settings etc.)
+- `app.component.html` - Das HTML Template für die Root Component
+- `app.component.css` - Die Styles für die Root Component
+- `app.routes.ts` - Angular Anwendungen kommen standardmäßig mit einem Router (Ab Standalone Projekten) in dieser Datei können die einzelnen Routen der Anwendung definiert werden. Die App Root wird dabei immer unter `/` gerendert.
+
+## Die erste Angular Component
+
+Alles was der User später auf der Oberfläche sieht ist eine Component in Angular. Wie in [Component Driven User Interfaces](../../explanation/component-driven-development/component-driven-user-interfaces.md) beschrieben bilden wir jeden Baustein von einer Web Applikation als Component ab.
+
+Alle Angular Components bestehen aus folgenden drei Teilen:
+
+- Eine Template Datei (Meistens im HTML Format) die das Aussehen der Component definiert
+- Eine Script Datei (Als Typescript Datei) die die Logik der Component definiert
+- Eine Styles Datei (Meistens im CSS Format, alternativ scss) die die Styles der Component definiert
+
+Angular bietet auch die Möglichkeit an, Templates und Styles inline bzw. in einer Datei zu definieren es empfiehlt sich aber für jede Component alle drei Teile in einer eigenen Datei zu definieren und eine Component in einen einzelnen Ordner zu speichern.
+
+Die einfachste und beste Möglichkeit Component zu erstellen ist die Angular CLI. Mit dem Befehl `ng generate component <component-name>` (kurz `ng g c <component-name>`) können wir eine neue Component erstellen. Die CLI erstellt dann automatisch alle drei Dateien für uns und fügt die Component in das `app` Verzeichnis ein. In diesem Beispiel erstellen wir eine Button Component:
+
+```bash
+ng g c button
+```
+
+Im `app` Ordner befindet sich nun ein neuer Ordner `button` der unsere Button Component beinhaltet. Als nächstes entfernen wir den kompletten Inhalt aus der `app.component.html` und importieren unsere Button Component in der `app.component.ts`:
+
+```ts
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { ButtonComponent } from './button/button.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, ButtonComponent], // Import Button Component
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = '<your-project-name>';
+}
+```
+
+Und können daraufhin in der `app.component.html` unseren Button wie ein HTML Tag verwenden:
+
+```html
+<app-button></app-button>
+```
+
+> [!NOTE]
+> Woher kommt der `app` prefix? Jede Angular Component hat einen Selector Prefix. In der `button.component.ts` gibt es die Property `selector`. Wenn wir den default prefix von `app` ändern möchten können wir in der `angular.json` für unser Projekt den `prefix` Wert ändern.
+> Prefix anpassen lohnt sich besonders wenn man mehrere Apps oder Libraries in einem Projekt entwickelt. Es empfiehlt sich auch den Produktnamen als Prefix zu verwenden.
+
+### Starten der Angular Anwendung
+
+Anschließend können wir unsere Anwendung einmal starten und unsere neue Button Component sehen. Angular Anwendungen können über die CLI gestartet werden mit dem Befehl `ng serve`. Alternativ kann man über `npm run start` die Anwendung starten (Tipp: Alle NPM Befehle wie Start etc. können in der `package.json` unter `scripts` ergänzt werden).
+
+In unserem Beispiel macht es aber Sinn die Anwendung direkt mit Debugging Tools zu starten und nutzen deshalb den `Run and Debug` Modus von VSCode. Anschließend sollte sich ein neuer Chrome Browser öffnen 
+unter dem Port 4200 (Default Port von Angular Anwendungen).
+
+Im Browser selbst wird nun `button works!` dargestellt. Wenn wir in der `button.component.html` schauen sehen wir diesen Text als Default Element welches die Angular CLI für uns erstellt hat.
+
+Wir können den Text einmal modifizieren und die Datei speichern. Unser Browser aktualisiert sich dann automatisch.
+
+## Eine Button Base Component programmieren
