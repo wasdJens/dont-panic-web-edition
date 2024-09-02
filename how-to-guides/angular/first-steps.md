@@ -294,3 +294,68 @@ Folgende Themen haben wir behandelt:
 - Angular Projekt Struktur
 - Input und Output Properties von Angular Components
 - Reagieren auf Events in Angular Components
+
+### Die fertigen Dateien:
+
+**app.component.html**
+```html
+<app-button [label]="'Test'" (buttonClick)="generateEmoji()"></app-button>
+{{currentEmoji }}
+```
+
+**app.component.ts**
+```ts
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { ButtonComponent } from './button/button.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, ButtonComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'test-angular-123';
+
+  public currentEmoji = '🚀';
+
+  private possibleEmojis = ['🚀', '🌈', '💥', '🔥', '🌟'];
+
+  public generateEmoji(): void {
+    const randomIndex = Math.floor(Math.random() * this.possibleEmojis.length);
+    this.currentEmoji = this.possibleEmojis[randomIndex];
+  }
+}
+```
+
+**button.component.html**
+```html
+<button (click)="handleClick()">
+  {{ label }}
+</button>
+```
+
+**button.component.ts**
+```ts
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-button',
+  standalone: true,
+  imports: [],
+  templateUrl: './button.component.html',
+  styleUrl: './button.component.css'
+})
+export class ButtonComponent {
+  @Input({ required: true })
+  label!: string;
+
+  @Output() buttonClick = new EventEmitter<void>();
+
+  public handleClick(): void {
+    this.buttonClick.emit();
+  }
+}
+```
