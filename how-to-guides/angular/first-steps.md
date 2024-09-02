@@ -163,3 +163,74 @@ Im Browser selbst wird nun `button works!` dargestellt. Wenn wir in der `button.
 Wir können den Text einmal modifizieren und die Datei speichern. Unser Browser aktualisiert sich dann automatisch.
 
 ## Eine Button Base Component programmieren
+
+Im nächsten Schritt möchten wir unseren Button Component als eine Base Component für unser Projekt programmieren. Mit Base Components beschreibe **ich** immer Components die als Basis für unsere gesamte Anwendung dienen und häufig wiederverwendet werden (Mehr zu diesem Thema hier: [Component Driven User Interfaces](../../explanation/component-driven-development/component-driven-user-interfaces.md)).
+
+**Warum verwenden wir nicht einfach den HTML Button Tag?**
+
+Einen normalen Button in einer Angular Component zu wrappen ist natürlich overhead und häufig auch duplicate code, wir müssen Teile vom Button Tag in unsere Component übernehmen. In der Praxis hat sich das wrappen von Basis HTML Tags aber bewährt wir gewinnen u.a. folgende Vorteile (Unvollständig siehe [Wrap Components](../../explanation/component-driven-development/wrap-basic-and-third-party-components.md) für mehr zu diesem Thema):
+
+- Single Point of Truth für jeden Button in unserer Applikation. Eine generelle Änderung (Bspw. Hover Effekt) muss nur an einer Stelle geändert werden.
+- Tests für Button Funkionalität kann als unit test in einer Component stattfinden
+- Der Button kann bestimmte Funktionalitäten haben die für unsere Applikation spezifisch sind (u.a. Tooltip Funktionalität, Verhalten bei verschiedenen Screen Größen, Icon Buttons etc.)
+
+In unserem Beispiel beschränken wir uns auch nur auf wirkliche Grundlagen von einem Button, um Angular Components besser kennen zu lernen. Unser Button soll dabei folgende Funktionen unterstützen:
+
+- Der Button hat ein gewissen Style der für unsere Anwendung spricht
+- Ich kann dem Button von außen ein Label übergeben, welches im Button angezeigt wird
+- Wenn ich auf den Button klicke möchte ich darauf reagieren
+
+Diese Anforderungen sind bewusst sehr abstrakt beschrieben ohne konkrete Technische Details. Mit Absicht. Denn dahinter verbirgt sich eine typische Anforderungen und beinhaltet die Grundlagen einer Angular Component. Wir schreiben die Anforderung nochmal etwas technisch detailierter: 
+
+- Der Button verwendet CSS für die Darstellung u.a. Hover Effekte und co.
+- Der Button hat eine Property `label` die das Label des Buttons definiert
+- Der Button hat ein Event `click` welches aufgerufen wird wenn der Button geklickt wird
+
+Wir lernen hier zwei fundamentale Konzepte von Components kennen: Properties und Events. Properties sind Werte die wir von außen an die Component übergeben (vgl. mit einem Parameter an eine Funktion) und über ein Event können wir von außen auf Dinge reagieren die in der Component passieren. Mit diesen zwei Eigenschaften können wir also eine Beziehung zwischen unterschiedlichen Components herstellen.
+
+- Eine andere Angular Component kann unseren Button für die Darstellung verwenden und selbständig Label und was beim Click passieren soll definieren
+- Der Button selbst weiß nicht wie sein Label aussieht oder was beim Click passiert
+
+In Angular gibt es dafür `@Input` und `Output` Decorators die wir auf unserer Component definieren. Hierfür öffnen wir unsere `button.component.ts` Datei und definieren folgendes:
+
+```ts
+@Input({ required: true })
+label!: string;
+
+@Output() buttonClick = new EventEmitter<void>();
+```
+
+Die `@Input` Property von unserer Component erweitert unsere Angular Component, dass diese von außen einen Input namens `label` übergeben bekommt als `string`. Wir können auch als Optionen an den Input mitgeben, dass dieser Input required ist. Wenn wir bspw. die Component jetzt speichern wird Angular einen Fehler werfen (NG8008).
+
+Die `@Output` Property definiert einen Event Emitter der ein Event `buttonClick` auslöst. In der Parent Component (Also die Component welche den Button aufruft) können wir dann auf dieses Event reagieren.
+
+Als nächstes verändern wir unser Template damit wirklich ein Button dargestellt wird, das Label angezeigt wird und auf das Click Event reagiert wird:
+
+```html
+<button (click)="handleClick()">
+  {{ label }}
+</button>
+```
+
+Hier passieren jetzt zwei Dinge:
+
+1. Wir können auch auf HTML Events reagieren in Angular mit `(<event-name>)` und können dann eine eigene Funktion aufrufen. In unserem Fall definieren wir in der `app.component.ts` die Funktion `handleClick`:
+
+```ts
+public handleClick(): void {
+  this.buttonClick.emit();
+}
+```
+
+2. Unsere Label Property möchten wir als Text im Button anzeigen dafür rufen wir die Variable einfach mit `{{}}` im Template auf.
+
+Damit unser Button jetzt angezeigt wird wechseln wir in die `app.component.html` und passen das Template an:
+
+```html
+<app-button [label]="'Test'"></app-button>
+```
+
+Damit wir einen Wert an den Input übergeben können verwenden wir `[]` in Angular. Wir können auch ohne `[]` die property direkt an einen simplen Wert (String, Number etc) übergeben aber damit wir bspw. auch Dynamische Werte übergeben können verwenden wir `[]`.
+
+Wenn wir jetzt alle Dateien speichern lädt der Angular Dev Web Server automatisch neu und auf unserer Webseite sollte jetzt ein Button mit dem Label `test` angezeigt werden. Wenn wir auf den Button klicken passiert aber noch nichts.
+
