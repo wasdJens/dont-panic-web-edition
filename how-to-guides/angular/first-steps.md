@@ -234,3 +234,63 @@ Damit wir einen Wert an den Input übergeben können verwenden wir `[]` in Angul
 
 Wenn wir jetzt alle Dateien speichern lädt der Angular Dev Web Server automatisch neu und auf unserer Webseite sollte jetzt ein Button mit dem Label `test` angezeigt werden. Wenn wir auf den Button klicken passiert aber noch nichts.
 
+## Arbeiten mit Events und Bedingungen
+
+In der `app.component.ts` können wir uns jetzt eine Logik überlegen die ausgeführt werden soll wenn ein User auf den Button klickt. Dadurch, dass unser Button eine "Base" Component ist wird das originale Click Event weitergereicht an die Parent Component. 
+
+- Wenn auf den Button geklickt wird soll ein Zufälliges Emoji auf der Webseite angezeigt werden
+
+Wir erweitern zuerst unsere `app.component.html` und `app.component.ts` um eine Funktion die auf das Button Click Event reagiert und ändern das Label, welches besser auf die Funktionalität passt:
+
+```html
+<app-button [label]="'Change Emoji'" (buttonClick)="generateEmoji()"></app-button>
+```
+
+Mit der `()` Syntax können wir nicht nur auf DOM Events reagieren sondern auch auf eigene Events die wir in einer Component definieren.
+
+```ts
+public generateEmoji(): void {
+  
+}
+```
+
+Als nächstes definieren wir uns eine Variable in der `app.component.ts` die das aktuelle Emoji speichert und geben dieses im Template aus:
+
+```ts
+public currentEmoji = '🚀';
+```
+
+```html
+
+```
+
+Jetzt definieren wir uns noch eine private Variable die alle Möglichen Emojis beinhaltet die zufällig gewählt werden können:
+
+```ts
+private possibleEmojis = ['🚀', '🌈', '💥', '🔥', '🌟'];
+```
+
+> [!NOTE]
+> Wieso nutzen wir `private` und `public`? Wir können in Angular Components auch Variablen definieren auf die bspw. nicht im Template zugegriffen werden darf. In diesem Beispiel könnten wir nicht mit `{{}}` auf die `possibleEmojis` im Template zugreifen.
+
+Abschließend erweitern wir den Inhalt der `generateEmoji` Funktion um eine Methode die einen zufälligen Index wählt und das `currentEmoji` auf den Wert des Indexes setzt:
+
+```ts
+const randomIndex = Math.floor(Math.random() * this.possibleEmojis.length);
+this.currentEmoji = this.possibleEmojis[randomIndex];
+```
+
+Wenn wir jetzt alles Speichern und auf unsere Seite den Button klicken wir ein anderes Emoji angezeigt. Angular übernimmt dabei für uns selbständig die Change Detection für die Variable `currentEmoji` und aktualisiert das Template automatisch.
+
+## Fazit
+
+In diesem How To haben wir gelernt wie man mit der Angular CLI Angular Projekte erstellt. Innerhalb von einem Angular Projekt haben wir uns einmal die Struktur angeschaut die immer automatisch von der CLI erstellt wird und wie man sich darin zurecht findet.
+
+Wir haben außerdem erste Schritte mit Angular Components gemacht und wie die Interaktion zwischen zwei Components aussehen kann kennen gelernt mit einem einfachen Button und Text Beispiel.
+
+Folgende Themen haben wir behandelt:
+
+- Angular CLI
+- Angular Projekt Struktur
+- Input und Output Properties von Angular Components
+- Reagieren auf Events in Angular Components
