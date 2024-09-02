@@ -261,7 +261,7 @@ public currentEmoji = '🚀';
 ```
 
 ```html
-
+{{currentEmoji }}
 ```
 
 Jetzt definieren wir uns noch eine private Variable die alle Möglichen Emojis beinhaltet die zufällig gewählt werden können:
