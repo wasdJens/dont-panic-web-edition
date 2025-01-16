@@ -12,7 +12,7 @@ ETUR soll dabei als Web Lösung für Cloud Dienste realisiert werden und Abhäng
 
 ## Voraussetzungen
 
-- Grundlagen von HTML ([Reference](../../reference/html/01-html.md)
+- Grundlagen von HTML ([Reference](../../reference/html/01-html.md))
 - Grundlagen von CSS ([Reference](../../reference/css/01-css.md))
 - Grundlagen von JavaScript ([Reference](../../reference/javascript/01-variables.md))
 - Grundlagen von HTTP ([Reference](../../reference/http/01-http.md))
